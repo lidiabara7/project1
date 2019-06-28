@@ -1,8 +1,3 @@
-//document click submit button
-//javascript for randomizing background wallpaper
-//set up firebase.. eventually. store searches into database and return as trending searches.
-
-
 function omdb() {
 
     var genre = "28"; //change this to jquery to attach to dropdown list
