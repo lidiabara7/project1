@@ -1,8 +1,8 @@
-$(document).ready(function () {
-    $('.carousel').carousel();
-    $('select').formSelect();
+// $(document).ready(function () {
+//     $('.carousel').carousel();
+//     $('select').formSelect();
 
-});
+// });
 
 function food() {
 
@@ -29,14 +29,6 @@ function food() {
             var link = response.hits[i].recipe.url;
             console.log(response.hits[i].recipe.image)
 
-            // var car_item = $("<a>").attr({
-            //     "class": "carousel-item",
-            //     "href": link
-            // })
-            // var a = $("<a class='carousel-item' style='transform: translateX(438px) translateY(100px) translateX(-400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;'></a>");
-            // var img = $("<img>").attr("src", img_url);
-            // a.append(img);
-            //img.wrap("<a class='carousel-item'></a>");
 
             // //init carousel
             var slider = $('.carousel');
