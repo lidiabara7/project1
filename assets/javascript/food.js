@@ -1,11 +1,9 @@
-//var food = (() => {
+var DEBUG = true;
 
-    var food_call = (search) => {
+food_call = (() => {
 
-        //var search = $("#food-input").val().trim();
-        //var search = "pasta";
+    return (search) => {
         var queryURL = "https://api.edamam.com/search?app_id=a1114364&app_key=9484d825ccfe84c554e9a02c4890952b&q=" + search;
-
 
         $.ajax({
             url: queryURL,
@@ -37,13 +35,6 @@
 
                 slider.carousel();
             }
-
         });
-
     }
-
-    //change function call to on click when user hits submit button/enter
-    //food_call();
-    //return food_call;
-
-//})()
+})()

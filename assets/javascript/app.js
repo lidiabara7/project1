@@ -1,18 +1,18 @@
-//store firebase data here
+// store firebase data here
 // Your web app's Firebase configuration
-// var firebaseConfig = {
-//     apiKey: "AIzaSyB2qEO1v5-ETBy30qeexa0lJBm4i3DlV5A",
-//     authDomain: "dinnerandmovie-16f25.firebaseapp.com",
-//     databaseURL: "https://dinnerandmovie-16f25.firebaseio.com",
-//     projectId: "dinnerandmovie-16f25",
-//     storageBucket: "",
-//     messagingSenderId: "614452607585",
-//     appId: "1:614452607585:web:b57b7fea16a412e2"
-// };
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
+var firebaseConfig = {
+    apiKey: "AIzaSyB2qEO1v5-ETBy30qeexa0lJBm4i3DlV5A",
+    authDomain: "dinnerandmovie-16f25.firebaseapp.com",
+    databaseURL: "https://dinnerandmovie-16f25.firebaseio.com",
+    projectId: "dinnerandmovie-16f25",
+    storageBucket: "dinnerandmovie-16f25.appspot.com",
+    messagingSenderId: "614452607585",
+    appId: "1:614452607585:web:b57b7fea16a412e2"
+  };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-// var database = firebase.database();
+var database = firebase.database();
 
 //new todo: 
 /*
@@ -34,6 +34,7 @@ $("button").on("click", event => {
 
     var food_search = $("#food-input").val().trim();
     var genre = $("#select-genre").val();
+    //var genre_name = $("#select-genre").val("id");
 
     //doesn't work properly, ask zane tomorrow
     food_call(food_search);
@@ -44,17 +45,26 @@ $("button").on("click", event => {
         genre: genre
     };
 
-    //database.ref().push(trending);
+    database.ref().push(trending);
     if (DEBUG) {
         console.table('app.js', food_search, genre, trending);
     }
 
 });
 
-// database.ref().on("child_added", snapshot => {
+database.ref().on("child_added", snapshot => {
 
-//     if (DEBUG) {
-//         console.table(snapshot.food, snapshot.genre);
-//     }
+    if (DEBUG) {
+        console.table(snapshot.food, snapshot.genre);
+    }
+    //trending variables
+    var food = snapshot.val().food;
+    var genre = snapshot.val().genre;
     
-// });
+    //create p element to append to trending div
+    var trending = $("<p> #" + food + " #" + genre +"</p>");
+    // testing, it works! altho its more of a "last search" than a trending, but we will work on that later 
+    //$("body").append(trending);
+    //append to trending div when haig and lidia create it
+    
+});
