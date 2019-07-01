@@ -1,24 +1,19 @@
-(function food() {
+//(() => {
 
-    var DEBUG = true;
+    //var DEBUG = true;
 
-    $(document).ready(function () {
-        $('.carousel').carousel();
-        $('select').formSelect();
 
-    });
+    var food_call = (search) => {
 
-    function api_call() {
-
-        //var search = $("#food-input").attr().trim();
-        var search = "pasta";
+        //var search = $("#food-input").val().trim();
+        //var search = "pasta";
         var queryURL = "https://api.edamam.com/search?app_id=a1114364&app_key=9484d825ccfe84c554e9a02c4890952b&q=" + search;
 
 
         $.ajax({
             url: queryURL,
             method: "GET",
-        }).then(function (response) {
+        }).then(response => {
             console.log(response);
             //obtain image and link to recipe
             //append to carousel
@@ -51,6 +46,7 @@
     }
 
     //change function call to on click when user hits submit button/enter
-    //api_call();
+    //food_call();
+    //return food_call();
 
-})()
+//})()

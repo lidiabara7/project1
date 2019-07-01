@@ -11,6 +11,8 @@
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <!-- our stylesheet if needed -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
   <!-- Materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -99,7 +101,10 @@
           </select>
           <label class="what-movie">What kind of movie?</label>
         </div>
-        <div class="col l4 m2 s1"></div>
+        <div class="col l4 m2 s1">
+        </div>
+        <button id="user-input"></button>
+
       </form>
     </div>
   </div>
@@ -110,6 +115,7 @@
   <!-- materialize js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- our javascript -->
+  <script src="assets/javascript/app.js"></script>
   <script src="assets/javascript/food.js"></script>
   <script src="assets/javascript/omdb.js"></script>
 </body>
