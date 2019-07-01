@@ -12,6 +12,13 @@ food_call = (() => {
             console.log(response);
             //obtain image and link to recipe
             //append to carousel
+           
+            if (response.count === 0) {               
+                console.log("RESPONSE DOESNT EXIST"); 
+            $(".input-field").css("backgroundColor" ,"#FA8072"); 
+             }
+             else {
+
             for (var i = 0; i < 3; i++) {
 
                 var title = response.hits[i].recipe.label;
@@ -35,6 +42,8 @@ food_call = (() => {
 
                 slider.carousel();
             }
+        }
         });
     }
 })()
+
