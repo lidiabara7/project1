@@ -50,6 +50,8 @@ $("button").on("click", event => {
         console.table('app.js', food_search, genre, trending);
     }
 
+    $("#main-container").show();
+    
 });
 
 database.ref().on("child_added", snapshot => {
