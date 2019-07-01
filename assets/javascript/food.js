@@ -1,7 +1,4 @@
-//(() => {
-
-    //var DEBUG = true;
-
+//var food = (() => {
 
     var food_call = (search) => {
 
@@ -47,6 +44,6 @@
 
     //change function call to on click when user hits submit button/enter
     //food_call();
-    //return food_call();
+    //return food_call;
 
 //})()
