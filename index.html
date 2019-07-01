@@ -2,117 +2,122 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 
-    <!-- bootstrap -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  <!-- bootstrap -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <!-- our stylesheet if needed -->
+  <!-- our stylesheet if needed -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-    <!-- Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+  <div class="row">
+    <div class="s0 m1 l1"></div>
+    <div class="carousel carousel-slider center col s12 m10 l10">
+      <div class="carousel-fixed-item center">
+        <!-- <a class="btn waves-effect white grey-text darken-text-2">button</a> -->
+      </div>
+      <div class="carousel-item red white-text" href="#one!">
+        <h2>First Panel</h2>
+        <p class="white-text">This is your first panel</p>
+      </div>
+      <div class="carousel-item amber white-text" href="#two!">
+        <h2>Second Panel</h2>
+        <p class="white-text">This is your second panel</p>
+      </div>
+      <div class="carousel-item green white-text" href="#three!">
+        <h2>Third Panel</h2>
+        <p class="white-text">This is your third panel</p>
+      </div>
+      <div class="carousel-item blue white-text" href="#four!">
+        <h2>Fourth Panel</h2>
+        <p class="white-text">This is your fourth panel</p>
+      </div>
+    </div>
+    <div class="s0 m1 l1"></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col s0 m4 l4"></div>
+    <div class="col s12 m4 l4">
+      <div class="card-panel pink accent-3">
+        <span class="white-text">
+          Dinner and a Movie. Thinking and making decisions can be hard. Let us do the hard work for you.
+        </span>
+      </div>
+    </div>
+    <div class="col s0 m4 l4"></div>
+
+  </div>
+  <div class="container">
     <div class="row">
-        <div class="s0 m1 l1"></div>
-        <div class="carousel carousel-slider center col s12 m10 l10">
-            <div class="carousel-fixed-item center">
-              <a class="btn waves-effect white grey-text darken-text-2">button</a>
-            </div>
-            <div class="carousel-item red white-text" href="#one!">
-              <h2>First Panel</h2>
-              <p class="white-text">This is your first panel</p>
-            </div>
-            <div class="carousel-item amber white-text" href="#two!">
-              <h2>Second Panel</h2>
-              <p class="white-text">This is your second panel</p>
-            </div>
-            <div class="carousel-item green white-text" href="#three!">
-              <h2>Third Panel</h2>
-              <p class="white-text">This is your third panel</p>
-            </div>
-            <div class="carousel-item blue white-text" href="#four!">
-              <h2>Fourth Panel</h2>
-              <p class="white-text">This is your fourth panel</p>
-            </div>
-        </div>
-        <div class="s0 m1 l1"></div>
-    </div>
+      <form id="food">
+        <div class="col l4 m2 s1"></div>
+        <div class="input-field col l4 m8 s10">
+          <!-- <i class="material-icons prefix">account_circle</i> -->
+          <input id="food-input" type="text" class="validate">
 
-    
+          <label for="icon_prefix">Ingredients?</label>
+        </div>
+        <div class="col l4 m2 s1"></div>
+      </form>
+    </div>
     <div class="row">
-        <div class="col s0 m4 l4"></div>
-            <div class="col s12 m4 l4">
-                    <div class="card-panel pink accent-3">
-                      <span class="white-text">
-                          Dinner and a Movie. Thinking and making decisions can be hard. Let us do the hard work for you.
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col s0 m4 l4"></div>
-
-    </div>
-    <div class="container">
-        <div class="row">
-            <form id="food">
-                <div class="col l4 m2 s1"></div>
-                <div class="input-field col l4 m8 s10">
-                    <!-- <i class="material-icons prefix">account_circle</i> -->
-                    <input id="food-input" type="text" class="validate">
-                    
-                    <label for="icon_prefix">Ingredients?</label>
-                </div>
-                <div class="col l4 m2 s1"></div>
-                </form>
+      <form id="genre">
+        <div class="col l4 m2 s1"></div>
+        <div class="input-field col l4 m8 s10">
+          <select>
+            <option value="" disabled selected>Click Me</option>
+            <option value="28">Action</option>
+            <option value="12">Adventure</option>
+            <option value="16">Animated</option>
+            <option value="35">Comedy</option>
+            <option value="80">Crime</option>
+            <option value="99">Documentary</option>
+            <option value="18">Drama</option>
+            <option value="10751">Family</option>
+            <option value="14">Fantasy</option>
+            <option value="36">History</option>
+            <option value="27">Horror</option>
+            <option value="10402">Music</option>
+            <option value="9648">Mystery</option>
+            <option value="10749">Romance</option>
+            <option value="878">Sci-Fi</option>
+            <option value="53">Thriller</option>
+            <option value="10770">TV-Movie</option>
+            <option value="10752">War</option>
+            <option value="37">Western</option>
+          </select>
+          <label class="what-movie">What kind of movie?</label>
         </div>
-        <div class="row">
-                <form id="genre">
-                    <div class="col l4 m2 s1"></div>
-                    <div class="input-field col l4 m8 s10">
-                    <select>
-                        
-                            <option value="" disabled selected>Click Me</option>
-                            <option value="28">Action</option>
-                            <option value="12">Adventure</option>
-                            <option value="16">Animated</option>
-                            <option value="35">Comedy</option>
-                            <option value="80">Crime</option>
-                            <option value="99">Documentary</option>
-                            <option value="18">Drama</option>
-                            <option value="10751">Family</option>
-                            <option value="14">Fantasy</option>
-                            <option value="36">History</option>
-                            <option value="27">Horror</option>
-                            <option value="10402">Music</option>
-                            <option value="9648">Mystery</option>
-                            <option value="10749">Romance</option>
-                            <option value="878">Sci-Fi</option>
-                            <option value="53">Thriller</option>
-                            <option value="10770">TV-Movie</option>
-                            <option value="10752">War</option>
-                            <option value="37">Western</option>
-                          </select>
-                          <label class="what-movie">What kind of movie?</label>
-                        </div>
-                    <div class="col l4 m2 s1"></div>
-                    </form>
-            </div>
+        <div class="col l4 m2 s1">
+        </div>
+        <button id="user-input"></button>
+
+      </form>
     </div>
+  </div>
 
 
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- materialize js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- our javascript -->
-    <script src="assets/javascript/food.js"></script>
-    <script src="assets/javascript/omdb.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- materialize js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- our javascript -->
+  <script src="assets/javascript/app.js"></script>
+  <script src="assets/javascript/food.js"></script>
+  <script src="assets/javascript/omdb.js"></script>
 </body>
 
 </html>
