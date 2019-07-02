@@ -8,7 +8,7 @@ var firebaseConfig = {
     storageBucket: "dinnerandmovie-16f25.appspot.com",
     messagingSenderId: "614452607585",
     appId: "1:614452607585:web:b57b7fea16a412e2"
-  };
+};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -38,7 +38,10 @@ $("button").on("click", event => {
 
     //doesn't work properly, ask zane tomorrow
     food_call(food_search);
+    //if food search is invalid, i don't want to start omdb_call. how can i implement this..?
+    //so.. if (response !== 0) then -> omdb_call(genre)?
     omdb_call(genre);
+
 
     var trending = {
         food: food_search,
@@ -51,7 +54,7 @@ $("button").on("click", event => {
     }
 
     $("#main-container").show();
-    
+
 });
 
 database.ref().on("child_added", snapshot => {
@@ -62,11 +65,10 @@ database.ref().on("child_added", snapshot => {
     //trending variables
     var food = snapshot.val().food;
     var genre = snapshot.val().genre;
-    
+
     //create p element to append to trending div
-    var trending = $("<p> #" + food + " #" + genre +"</p>");
+    var trending = $("<p> #" + food + " #" + genre + "</p>");
     // testing, it works! altho its more of a "last search" than a trending, but we will work on that later 
-    //$("body").append(trending);
-    //append to trending div when haig and lidia create it
-    
+    $("body").append(trending); //<-- i have this showing up just so we can visualize it right now. will append it to a proper div tomorrow
+
 });
