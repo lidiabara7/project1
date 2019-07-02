@@ -49,7 +49,7 @@ food_call = (() => {
                     var img_url = $("<img>").attr("src", image);
                     img_link.append(img_url);
                     foodDiv.append(title).append(img_link);
-                    $("#main-container").append(foodDiv);
+                    $("#main-container").prepend(foodDiv);
                     resolve(true);
                 }
             });

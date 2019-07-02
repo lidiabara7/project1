@@ -34,7 +34,7 @@ omdb_call = (() => {
 
             omdbDiv.append(title).append(summary).append(img);
 
-            $("#main-container").append(omdbDiv);
+            $("#food-div").append(omdbDiv);
         });
     }
 })()
