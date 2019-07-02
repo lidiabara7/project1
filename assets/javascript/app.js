@@ -73,6 +73,6 @@ database.ref().on("child_added", snapshot => {
     //create p element to append to trending div
     var trending = $("<p> #" + food + " #" + genre + "</p>");
     // testing, it works! altho its more of a "last search" than a trending, but we will work on that later 
-    $("body").append(trending); //<-- i have this showing up just so we can visualize it right now. will append it to a proper div tomorrow
+    $("#trending").append(trending); //<-- i have this showing up just so we can visualize it right now. will append it to a proper div tomorrow
 
 });
