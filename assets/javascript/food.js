@@ -21,9 +21,12 @@ food_call = (() => {
             if (response.count === 0) {
                 console.log("RESPONSE DOESNT EXIST");
                 $(".input-field").css("backgroundColor", "#FA8072");
+                $("#food-input").val("");
                 return false;
             }
             else {
+                $(".input-field").css("backgroundColor", "	#000000");
+                
                 //obtains random index from API so that we are appending a random item everytime.. 
                 var index = Math.floor(Math.random() * response.hits.length)
                 var label = response.hits[index].recipe.label;
