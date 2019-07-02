@@ -53,8 +53,14 @@ $("button").on("click", event => {
     //will now only run ombd_call if food_call works
     food_call(food_search).then(result => {
         if (result) {
+            var trending = {
+                food: food_search,
+                genre: genre_name
+            };
             omdb_call(genre);
             $("#main-container").show();
+            database.ref().push(trending);
+
         }
     });
 
@@ -62,12 +68,8 @@ $("button").on("click", event => {
     //so.. if (response !== 0) then -> omdb_call(genre)?
 
 
-    var trending = {
-        food: food_search,
-        genre: genre_name
-    };
+    
 
-    database.ref().push(trending);
     if (DEBUG) {
         console.table('app.js', food_search, genre, trending);
     }
