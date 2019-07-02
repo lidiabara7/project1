@@ -21,10 +21,24 @@ push user input to firebase as an array and then retrieve child for appending im
 ... or should we handle both separately? have the searches push into firebase but also search the API right away, instead of waiting for firebase to return the child_added.
 */
 
+var wallpapers = [
+    "assets/images/curtain-2757815_1920.png",
+    "assets/images/film-1668918_1920.jpg",
+    "assets/images/film-3057394_1920.jpg",
+    "assets/images/theater-105574_1920.jpg",
+    "assets/images/theater-1713816_1920.jpg",
+    "assets/images/theater-4023278_1920.jpg"
+];
 
 $(document).ready(function () {
-    $('.carousel').carousel();
-    $('select').formSelect();
+    //$('.carousel').carousel();
+    $("select").formSelect();
+
+    var randomWallpaper = Math.floor(Math.random() * wallpapers.length);
+    var bgImg = "url(" + wallpapers[randomWallpaper] + ")";
+    $("body").css({ "background": "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))," + bgImg });
+
+
 
 });
 
@@ -73,6 +87,6 @@ database.ref().on("child_added", snapshot => {
     //create p element to append to trending div
     var trending = $("<p> #" + food + " #" + genre + "</p>");
     // testing, it works! altho its more of a "last search" than a trending, but we will work on that later 
-    $("#trending").append(trending); //<-- i have this showing up just so we can visualize it right now. will append it to a proper div tomorrow
+    $("#trending").prepend(trending); //<-- i have this showing up just so we can visualize it right now. will append it to a proper div tomorrow
 
 });
