@@ -1,4 +1,4 @@
-var DEBUG = true;
+var DEBUG = false;
 
 food_call = (() => {
 
@@ -12,9 +12,7 @@ food_call = (() => {
                 url: queryURL,
                 method: "GET",
             }).then(response => {
-                if (DEBUG) {
-                    console.log(response);
-                }
+                if (DEBUG) { console.log(response); }
                 //obtain image and link to recipe
                 //append to carousel
 
@@ -34,9 +32,7 @@ food_call = (() => {
                     var image = response.hits[index].recipe.image;
 
 
-                    if (DEBUG) {
-                        console.table(title, link, image)
-                    }
+                    if (DEBUG) { console.table(title, link, image); }
 
                     //hi haig, select id food-div in css
                     var foodDiv = $("<div>").attr("id", "food-div");
@@ -53,14 +49,7 @@ food_call = (() => {
                     resolve(true);
                 }
             });
-
         });
-        
-
-        //return this.. somehow, look in app.js for reason why
-        //var response;
-        //this is a check condition to prevent ombd from running if food doesn't exist
-        //return true;
     }
 })()
 
