@@ -54,6 +54,7 @@ $("button").on("click", event => {
     food_call(food_search).then(result => {
         if (result) {
             omdb_call(genre);
+            $("#main-container").show();
         }
     });
 
@@ -71,7 +72,7 @@ $("button").on("click", event => {
         console.table('app.js', food_search, genre, trending);
     }
 
-    $("#main-container").show();
+
 
 });
 
