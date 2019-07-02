@@ -36,7 +36,13 @@ $(document).ready(function () {
 
     var randomWallpaper = Math.floor(Math.random() * wallpapers.length);
     var bgImg = "url(" + wallpapers[randomWallpaper] + ")";
-    $("body").css({ "background": "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))," + bgImg });
+    $("body").css(
+        {
+            "background" : "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))," + bgImg,
+            "background-attachment" : "fixed",
+            "height" : "100%"
+        }
+    );
 
 
 
@@ -68,7 +74,7 @@ $("button").on("click", event => {
     //so.. if (response !== 0) then -> omdb_call(genre)?
 
 
-    
+
 
     if (DEBUG) {
         console.table('app.js', food_search, genre, trending);
