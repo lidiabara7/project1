@@ -6,7 +6,7 @@ food_call = (() => {
         var queryURL = "https://api.edamam.com/search?app_id=a1114364&app_key=9484d825ccfe84c554e9a02c4890952b&q=" + search;
 
         //return this.. somehow, look in app.js for reason why
-        var response;
+        //var response;
 
         $.ajax({
             url: queryURL,
@@ -21,6 +21,7 @@ food_call = (() => {
             if (response.count === 0) {
                 console.log("RESPONSE DOESNT EXIST");
                 $(".input-field").css("backgroundColor", "#FA8072");
+                return false;
             }
             else {
                 //obtains random index from API so that we are appending a random item everytime.. 
@@ -48,9 +49,9 @@ food_call = (() => {
                 $("#main-container").append(foodDiv);
 
             }
-
-            return response;
         });
+        //this is a check condition to prevent ombd from running if food doesn't exist
+        return true;
     }
 })()
 

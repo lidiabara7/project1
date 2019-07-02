@@ -34,18 +34,19 @@ $("button").on("click", event => {
 
     var food_search = $("#food-input").val().trim();
     var genre = $("#select-genre").val();
-    //var genre_name = $("#select-genre").val("id");
+    var genre_name = $("option:selected").text();
 
-    //doesn't work properly, ask zane tomorrow
-    food_call(food_search);
+    //will now only run ombd_call if food_call works
+    if (food_call(food_search)) {
+        omdb_call(genre);
+    }
     //if food search is invalid, i don't want to start omdb_call. how can i implement this..?
     //so.. if (response !== 0) then -> omdb_call(genre)?
-    omdb_call(genre);
 
 
     var trending = {
         food: food_search,
-        genre: genre
+        genre: genre_name
     };
 
     database.ref().push(trending);
