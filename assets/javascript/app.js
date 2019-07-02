@@ -37,9 +37,12 @@ $("button").on("click", event => {
     var genre_name = $("option:selected").text();
 
     //will now only run ombd_call if food_call works
-    if (food_call(food_search)) {
-        omdb_call(genre);
-    }
+    food_call(food_search).then(result => {
+        if (result) {
+            omdb_call(genre);
+        }
+    });
+
     //if food search is invalid, i don't want to start omdb_call. how can i implement this..?
     //so.. if (response !== 0) then -> omdb_call(genre)?
 
