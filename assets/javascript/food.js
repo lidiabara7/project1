@@ -20,7 +20,7 @@ food_call = (() => {
 
                 if (response.count === 0) {
                     console.log("RESPONSE DOESNT EXIST");
-                    $(".input-field").css("backgroundColor", "#FA8072");
+                    $(".input-field").css("backgroundColor", "#8B0000");
                     $("#food-input").val("");
                     resolve(false);
                 }
